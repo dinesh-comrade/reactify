@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/reactify/static/css/main.f9080e50.css",
+    "main.js": "/reactify/static/js/main.659025c2.js",
+    "static/media/iphone.jpg": "/reactify/static/media/iphone.6c29b023fa9ddb4713c4.jpg",
+    "static/media/laptop.jpg": "/reactify/static/media/laptop.3aac9b3eddcc7db8d68c.jpg",
+    "static/media/airpods.jpg": "/reactify/static/media/airpods.d34b3b7b0adf658874f8.jpg",
+    "static/media/structure.png": "/reactify/static/media/structure.4127b36258b5e9dc8f88.png",
+    "index.html": "/reactify/index.html",
+    "main.f9080e50.css.map": "/reactify/static/css/main.f9080e50.css.map",
+    "main.659025c2.js.map": "/reactify/static/js/main.659025c2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9080e50.css",
+    "static/js/main.659025c2.js"
+  ]
+}
