@@ -8,7 +8,7 @@ function ProductsListing() {
   const products = useSelector((state) => state.products.products);
   const dispatch = useDispatch();
   const fetched = useSelector((state) => state.products.fetched);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const fetchProducts = async () => {
     if (!fetched) {

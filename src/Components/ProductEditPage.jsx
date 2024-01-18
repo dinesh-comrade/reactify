@@ -8,7 +8,7 @@ import {
 } from "../Slice/productSlice";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 function ProductEditPage() {
   const product = useSelector((state) => state.selectedProduct);
@@ -20,12 +20,7 @@ function ProductEditPage() {
   const dispatch = useDispatch();
   const [newTitle, setTitle] = useState("");
   const [newPrice, setPrice] = useState(0);
-
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
+  const navigate = useNavigate();
 
   const fetchProductDetails = async () => {
     const response = await axios
@@ -53,10 +48,12 @@ function ProductEditPage() {
     }
   }, [product]);
 
-  const onSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     dispatch(
       updateProduct({ id: productId, title: newTitle, price: newPrice })
     );
+    navigate("/products");
     console.log("Newtitle: ", newTitle, "Newprice:", newPrice);
   };
 
@@ -69,67 +66,38 @@ function ProductEditPage() {
           <div className="col-lg-6">
             <img className="img-fluid detail-img" src={image} alt={title} />
           </div>
-          <form
-            className="col-lg-6 edit-form"
-            onSubmit={handleSubmit(onSubmit)}
-          >
+          <form className="col-lg-6 edit-form" onSubmit={handleSubmit}>
             <div className="form-floating mb-3">
               <input
+                className="form-control"
                 type="text"
-                className={`form-control ${errors?.title ? "is-invalid" : ""}`}
-                name="title"
                 value={newTitle}
-                onChange={(e) =>
-                  setTitle(e.target.value.replace(/[^A-Za-z\s]/g, ""))
-                }
-                {...register("title", {
-                  required: "title is required",
-                  pattern: {
-                    value: /^[A-Za-z\s]+$/,
-                    message: "Only alphabetic characters are allowed",
-                  },
-                })}
+                onChange={(e) => setTitle(e.target.value)}
               />
               <label htmlFor="title">Title</label>
-              {errors?.title && (
-                <div className="invalid-feedback">{errors.title.message}</div>
-              )}
             </div>
             <div className="form-floating mb-3">
               <input
+                className="form-control"
                 type="number"
-                className={`form-control ${errors?.price ? "is-invalid" : ""}`}
-                name="price"
                 value={newPrice}
-                onChange={(e) =>
-                  setPrice(e.target.value.replace(/[^0-9]/g, ""))
-                }
-                {...register("price", {
-                  required: "price is required",
-                  minLength: {
-                    value: 1,
-                    message: "Price must be given",
-                  },
-                  maxLength: {
-                    value: 6,
-                    message: "Price exceeded than limit",
-                  },
-                  pattern: {
-                    value: /^\d+(\.\d{1,2})?$/,
-                    message: "Only numeric characters are allowed",
-                  },
-                })}
+                onChange={(e) => setPrice(e.target.value)}
               />
               <label htmlFor="price">Price</label>
-              {errors?.price && (
-                <div className="invalid-feedback">{errors.price.message}</div>
-              )}
             </div>
             <h3 className="text-brown">{category}</h3>
             <p>{description}</p>
-            <button className="btn btn-success add-to-cart" type="submit">
+            <button className="btn btn-success rounded-pill px-4" type="submit">
               🛒 Update
             </button>
+            <Link to="/products">
+              <button
+                className="btn btn-primary ms-4 rounded-pill px-4"
+                type="button"
+              >
+                Back
+              </button>
+            </Link>
           </form>
         </div>
       )}

@@ -26,7 +26,9 @@ const productsReducer = createSlice({
         product.price = price;
         console.log("Updated", product.title, product.price);
       }
+      console.log("product", product);
       console.log("Not updated");
+      state.fetched = true;
     },
   },
 });
