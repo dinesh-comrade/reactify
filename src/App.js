@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { Navigation } from "./Components/Navigation";
 import { Footer } from "./Components/Footer";
+import { ProductEditPage } from "./Components/ProductEditPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/reactify" element={<Home />} />
         <Route path="/products" element={<ProductsListing />} />
         <Route path="/products/:productId" element={<ProductDetails />} />
+        <Route path="/products/:productId&edit" element={<ProductEditPage />} />
         <Route path="/login" element={<Form />} />
       </Routes>
       <Outlet />

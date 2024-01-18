@@ -594,3 +594,24 @@ footer .footer-container {
 .btn-success.add-to-cart.clicked {
   animation: slide-out 0.5s forwards;
 }
+
+/* Edit page form */
+.edit-form .form-control {
+  width: 100%;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  padding: 4%;
+}
+
+.edit-form label {
+  font-weight: bold;
+  margin-bottom: 2%;
+  letter-spacing: 5%;
+}
+
+.edit-form .form-floating label {
+  margin-left: 2%;
+  color: #333;
+}
+
