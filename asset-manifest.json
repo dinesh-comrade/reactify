@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/reactify/static/css/main.0a7c00e7.css",
-    "main.js": "/reactify/static/js/main.65994fbb.js",
+    "main.css": "/reactify/static/css/main.c52e8ff8.css",
+    "main.js": "/reactify/static/js/main.9e48e5a9.js",
     "static/media/2Adidas.jpg": "/reactify/static/media/2Adidas.b24af63a94f92f10441d.jpg",
     "static/media/1Cloth.jpeg": "/reactify/static/media/1Cloth.1ca366377e178feaefc6.jpeg",
     "static/media/3Group.jpg": "/reactify/static/media/3Group.78e0e7b85477a42106c8.jpg",
     "static/media/structure.png": "/reactify/static/media/structure.4127b36258b5e9dc8f88.png",
     "index.html": "/reactify/index.html",
-    "main.0a7c00e7.css.map": "/reactify/static/css/main.0a7c00e7.css.map",
-    "main.65994fbb.js.map": "/reactify/static/js/main.65994fbb.js.map"
+    "main.c52e8ff8.css.map": "/reactify/static/css/main.c52e8ff8.css.map",
+    "main.9e48e5a9.js.map": "/reactify/static/js/main.9e48e5a9.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a7c00e7.css",
-    "static/js/main.65994fbb.js"
+    "static/css/main.c52e8ff8.css",
+    "static/js/main.9e48e5a9.js"
   ]
 }
